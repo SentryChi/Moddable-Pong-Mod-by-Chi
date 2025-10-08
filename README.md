@@ -24,6 +24,10 @@ Please use [pre-commit](https://pre-commit.com) to check for correct formatting
 and other issues before creating commits. To do this automatically, you can add
 it as a git hook:
 
+### Author Notes
+
+This is an assingment mod for my submission for the GameUp Africa Godot Course
+
 ```
 # If you don't have pre-commit already:
 pip install pre-commit
