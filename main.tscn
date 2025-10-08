@@ -1,11 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://bel3lwsvc2uc3"]
+[gd_scene load_steps=12 format=3 uid="uid://bel3lwsvc2uc3"]
 
 [ext_resource type="PackedScene" uid="uid://s7enbp56f256" path="res://components/paddles/basic_paddle.tscn" id="1_xxpg5"]
+[ext_resource type="Texture2D" uid="uid://dwos2iswot0jk" path="res://assets/textures/paddles/basic_paddle_6.png" id="3_kek77"]
 [ext_resource type="PackedScene" uid="uid://cg1m4evi8c35o" path="res://components/other/spawner.tscn" id="3_spct4"]
 [ext_resource type="PackedScene" uid="uid://bn368pidqsqgs" path="res://rules_goals/game_logic.tscn" id="3_umelw"]
+[ext_resource type="Texture2D" uid="uid://cgxwawr3ncdpx" path="res://assets/textures/paddles/basic_paddle_7.png" id="4_4c57u"]
 [ext_resource type="PackedScene" uid="uid://bis7afjjuwypq" path="res://hud.tscn" id="4_4868o"]
 [ext_resource type="PackedScene" uid="uid://cg8ibi18um3vg" path="res://spaces/basic_space.tscn" id="4_nvjpm"]
 [ext_resource type="PackedScene" uid="uid://c7l70grmkauij" path="res://components/balls/basic_ball.tscn" id="4_rffv2"]
+[ext_resource type="Texture2D" uid="uid://cahd7gbsvhjfe" path="res://assets/textures/balls/basic_ball_6.png" id="7_efxa6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_guyqd"]
 size = Vector2(10, 1080)
@@ -19,12 +22,39 @@ metadata/_edit_vertical_guides_ = [-933.0]
 
 [node name="BasicPaddleLeft" parent="." instance=ExtResource("1_xxpg5")]
 position = Vector2(64, 512)
-tint = Color(0.511023, 0.361749, 0.971889, 1)
+texture = ExtResource("3_kek77")
+tint = Color(1, 1, 0.972549, 1)
+
+[node name="BasicPaddleLeft-Def1" parent="." instance=ExtResource("1_xxpg5")]
+position = Vector2(659, 945)
+scale = Vector2(0.458854, 0.458854)
+texture = ExtResource("3_kek77")
+tint = Color(0.938961, 0.36381, 0.472478, 1)
+
+[node name="BasicPaddleLeft-Def2" parent="." instance=ExtResource("1_xxpg5")]
+position = Vector2(659, 179)
+scale = Vector2(0.458854, 0.458854)
+texture = ExtResource("3_kek77")
+tint = Color(0.938961, 0.36381, 0.472478, 1)
 
 [node name="BasicPaddleRight" parent="." instance=ExtResource("1_xxpg5")]
 position = Vector2(1856, 512)
 player = 1
-tint = Color(0.511023, 0.361749, 0.971889, 1)
+texture = ExtResource("4_4c57u")
+
+[node name="BasicPaddleRight-Def1" parent="." instance=ExtResource("1_xxpg5")]
+position = Vector2(1269, 179)
+scale = Vector2(0.459, 0.459)
+player = 1
+texture = ExtResource("4_4c57u")
+tint = Color(0.937255, 0.364706, 0.470588, 1)
+
+[node name="BasicPaddleRight-Def2" parent="." instance=ExtResource("1_xxpg5")]
+position = Vector2(1269, 953)
+scale = Vector2(0.459, 0.459)
+player = 1
+texture = ExtResource("4_4c57u")
+tint = Color(0.937255, 0.364706, 0.470588, 1)
 
 [node name="BallSpawner" parent="." groups=["ball spawners"] instance=ExtResource("3_spct4")]
 position = Vector2(967, 531)
@@ -32,8 +62,9 @@ spawn_area = SubResource("RectangleShape2D_guyqd")
 life_time = 0.0
 
 [node name="BasicBall" parent="BallSpawner" instance=ExtResource("4_rffv2")]
-linear_velocity = Vector2(353.553, 353.553)
-tint = Color(0.509804, 0.360784, 0.972549, 1)
+initial_speed = 900.0
+texture = ExtResource("7_efxa6")
+tint = Color(0.986052, 0.985156, 0.999654, 1)
 
 [node name="GameLogic" parent="." instance=ExtResource("3_umelw")]
 

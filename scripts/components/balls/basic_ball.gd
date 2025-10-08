@@ -97,7 +97,7 @@ func _on_hang():
 
 
 func _on_body_entered(body: Node2D):
-	DampedOscillator.animate(self, "scale", 1600.0, 4.0, 5.0, 0.75)
+	#DampedOscillator.animate(self, "scale", 1600.0, 4.0, 5.0, 0.75)
 	if body.is_in_group("paddles"):
 		body.on_ball_hit()
 		$PaddleAudioStreamPlayer.play()
