@@ -13,3 +13,4 @@
 /project.godot            export-subst
 *.png filter=lfs diff=lfs merge=lfs -text
 *.ogg filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
